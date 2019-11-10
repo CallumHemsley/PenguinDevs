@@ -1,13 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Penguin Devs`,
+    author: `Callum Hemsley`,
+    description: `Personal blog by Callum Hemsley. Showcasing my thoughts and experiences coding.`,
+    siteUrl: `https://penguindevs.xyz`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `@penguindevs`,
     },
   },
+  pathPrefix: "/",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,9 +40,21 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷',
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
         ],
       },
     },
@@ -57,13 +70,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Penguin Devs`,
+        short_name: `PenguinDevs`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/penguin.png`,
+        theme_color_in_head: false
       },
     },
     `gatsby-plugin-offline`,
@@ -74,5 +88,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-catch-links`,
   ],
 }

@@ -1,0 +1,31 @@
+#titleHeader {
+    font-family: "Open Sans";
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 42px;
+    line-height: 50px;
+    color: #333;
+    font-size: 40px;
+    font-weight: 700;   
+    letter-spacing: -2px;
+    outline: 0;
+}
+
+#smallTitleHeader {
+    font-family: "Open Sans";
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 42px;
+    line-height: 40px;
+    font-size: 1.4427rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    outline: 0; 
+    color: #333;
+}
+
+#footer {
+    color: #333;
+    font-family: Open Sans,sans-serif;
+    line-height: 1.42857143;
+}

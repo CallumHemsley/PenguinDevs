@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import "./layout.css";
 
 class Layout extends React.Component {
   render() {
@@ -11,32 +12,32 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
+        <>
+          <h1
+            id="titleHeader"
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              marginBottom: rhythm(0.75),
+              marginTop: 0,
             }}
-            to={`/`}
           >
-            {title}
-          </Link>
-        </h1>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+              }}
+              to={`/`}
+            >
+              {title}
+            </Link>
+            <img style={{marginBottom: 0, marginLeft: "6px"}} src="http://icooon-mono.com/i/icon_14423/icon_144230_256.png" height="25" alt="a penguin"></img>
+          </h1>
+        </>
       )
     } else {
       header = (
         <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
+          id="smallTitleHeader"
         >
           <Link
             style={{
@@ -62,10 +63,8 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer id="footer">
+          © {new Date().getFullYear()}, Callum Hemsley
         </footer>
       </div>
     )
