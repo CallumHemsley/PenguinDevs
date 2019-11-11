@@ -22,6 +22,7 @@ class BlogPostTemplate extends React.Component {
           <header>
             <h1
               style={{
+                fontFamily: "Libre Baskerville",
                 marginTop: rhythm(1),
                 marginBottom: 0,
               }}

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm, scale } from "../utils/typography"
+import Footer from "./Footer";
 import "./layout.css";
 
 class Layout extends React.Component {
@@ -63,9 +63,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer id="footer">
-          © {new Date().getFullYear()}, Callum Hemsley
-        </footer>
+        <Footer />
       </div>
     )
   }
