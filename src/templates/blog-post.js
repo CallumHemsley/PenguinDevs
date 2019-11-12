@@ -46,6 +46,26 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
+            <h3
+              style={{
+                color: "#00c918",
+                marginBottom: rhythm(0.75),
+                marginTop: 0,
+              }}
+              id="smallTitleHeader"
+            >
+              <Link
+                style={{
+                  boxShadow: `none`,
+                  textDecoration: `none`,
+                  color: `inherit`,
+                  
+                }}
+                to={`/`}
+              >
+                Penguin Devs
+              </Link>
+            </h3>
             <Bio />
           </footer>
         </article>

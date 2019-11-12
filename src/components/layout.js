@@ -9,6 +9,7 @@ class Layout extends React.Component {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
+    let footer = null;
 
     if (location.pathname === rootPath) {
       header = (
@@ -34,9 +35,12 @@ class Layout extends React.Component {
           </h1>
         </>
       )
+
+      footer = <Footer />
     } else {
       header = (
         <h3
+          style={{color: "#00c918"}}
           id="smallTitleHeader"
         >
           <Link
@@ -63,7 +67,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <Footer />
+        {footer}
       </div>
     )
   }

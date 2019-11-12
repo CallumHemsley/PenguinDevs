@@ -15,7 +15,7 @@ class Footer extends React.Component {
         }}
       >
         <div style={{ float: 'right' }}>
-          <a style={{color: "#777"}} href="/contact" >
+          <a style={{color: "#00c918"}} href="/contact" >
             contact
           </a>
         </div>
