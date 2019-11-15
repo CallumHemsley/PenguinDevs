@@ -3,4 +3,4 @@ import "typeface-montserrat"
 import "typeface-merriweather"
 
 
-require("prismjs/themes/prism-test.css")
+require("prismjs/themes/prism-okaidia.css")
