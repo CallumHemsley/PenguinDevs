@@ -56,7 +56,7 @@ const Bio = () => {
       <p>
       Personal blog by{' '}
       <strong>
-        <a href="https://mobile.twitter.com/penguindevs">{author}</a>
+        <a style={{color: "#00c918"}} href="https://mobile.twitter.com/penguindevs">{author}</a>
       </strong>.{' '}
       <br/>
       Showcasing my thoughts and experiences coding.

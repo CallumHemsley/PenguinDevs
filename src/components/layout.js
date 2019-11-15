@@ -3,59 +3,14 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Footer from "./Footer";
 import "./layout.css";
+import Header from "./Header";
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
-    let footer = null;
+    let footer = (location.pathname === rootPath) ? <Footer /> : null;
 
-    if (location.pathname === rootPath) {
-      header = (
-        <>
-          <h1
-            id="titleHeader"
-            style={{
-              marginBottom: rhythm(0.75),
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-            <img style={{marginBottom: 0, marginLeft: "6px"}} src="http://icooon-mono.com/i/icon_14423/icon_144230_256.png" height="25" alt="a penguin"></img>
-          </h1>
-        </>
-      )
-
-      footer = <Footer />
-    } else {
-      header = (
-        <h3
-          style={{color: "#00c918"}}
-          id="smallTitleHeader"
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
     return (
       <div
         style={{
@@ -65,7 +20,9 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header>
+          <Header location={location} title={title} />
+        </header>
         <main>{children}</main>
         {footer}
       </div>
