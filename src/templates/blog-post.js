@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { Disqus } from 'gatsby-plugin-disqus'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +11,13 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+
+    let disqusConfig = {
+      url: "penguindevs.xyz" + this.props.location.pathname,
+      identifier: post.id,
+      title: post.frontmatter.title,
+    }
+
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -46,6 +53,8 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
+            <Disqus config={disqusConfig}/>
+
             <h3
               style={{
                 color: "#00c918",
@@ -116,6 +125,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        id
         date(formatString: "MMMM DD, YYYY")
         description
       }
