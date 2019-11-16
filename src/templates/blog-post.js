@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     let disqusConfig = {
-      url: "penguindevs.xyz" + this.props.location.pathname,
+      url: "https://penguindevs.xyz" + this.props.location.pathname,
       identifier: post.id,
       title: post.frontmatter.title,
     }

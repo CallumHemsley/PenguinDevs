@@ -9,7 +9,7 @@ class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let footer = (location.pathname === rootPath) ? <Footer /> : null;
+    let footer = (location.pathname === rootPath || location.pathname === "/tldr") ? <Footer /> : null;
 
     return (
       <div

@@ -27,9 +27,19 @@ const Header = (props) => {
   `)
   const { location, title } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
-  if (location.pathname === rootPath) {
+  if (location.pathname === rootPath ||
+      location.pathname === "/tldr") {
     header = (
       <>
+        <div style={{float: 'right'}}>
+          <a href="/" >
+            posts
+          </a>{' '}
+          &bull;{' '}
+          <a href="/tldr">
+            tl;dr
+          </a>
+        </div>
         <h1
           id="titleHeader"
           style={{
