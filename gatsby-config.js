@@ -95,6 +95,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://penguindevs.xyz`,
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sitemap`,
   ],
