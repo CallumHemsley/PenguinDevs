@@ -2,6 +2,7 @@
 title: "Handling Images with React/Redux - Part 1"
 date: "2019-10-28"
 description: "These posts are about the hardships I faced when figuring out how to upload an image from my website, sending it to my API and then storing it in my database."
+type: "blog"
 ---
 
 These posts are about the hardships I faced when figuring out how to upload an image from my website, sending it to my API and then storing it in my database.

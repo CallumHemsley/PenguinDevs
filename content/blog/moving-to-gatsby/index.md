@@ -2,6 +2,7 @@
 title: "Moving to Gatsby"
 date: "2019-11-12"
 description: "Why I retired my own, ground-up website."
+type: "blog"
 ---
 
 Do I regret creating my own blogging-engine and site from the ground up? 
