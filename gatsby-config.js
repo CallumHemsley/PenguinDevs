@@ -18,6 +18,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/tldr`,
+        name: `tldr`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-disqus`,
       options: {
         shortname: `penguindevs-1`
