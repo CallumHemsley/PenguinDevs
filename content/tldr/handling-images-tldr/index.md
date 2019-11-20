@@ -92,7 +92,7 @@ const config = {
 };
 
 //Define your backend url
-const url = "localhost:3001/HELLO";
+const url = "localhost:3001/images";
 
 ... //more below
 ```
