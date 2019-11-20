@@ -6,7 +6,6 @@ type: "tldr"
 ---
 
 While you could implement this all yourself, it's much easier to use **react-dropzone**.
-(Note - You must have a React version above *>= 16.8*)
 
 In this example I'll be using **create-react-app** to demo, with react version **16.12**.
 
@@ -50,11 +49,11 @@ function App() {
 
 - Set `multiple` to true inside the `Dropzone` wrapper if you want users to be able to select multiple images.
 - Currently, only images are accepted. If you want any file to be accepted, remove the `accept` property from `Dropzone`.
-- As highlighted, `onDrop` is the function that will be called when an image is given.
+- As highlighted, `onDrop` is called when an image is given by the user, then we call `onImageDrop()` which we define below.
 
 ### Getting the Image file
 
-Next, let's start coding the `onDrop` function.
+Next, let's start coding the `onImageDrop` function.
 
 ```jsx{3}
 function App() {
