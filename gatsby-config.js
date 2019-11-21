@@ -4,6 +4,7 @@ module.exports = {
     author: `Callum Hemsley`,
     description: `Personal blog by Callum Hemsley. Showcasing my thoughts and experiences coding.`,
     siteUrl: `https://penguindevs.xyz`,
+    image: "/content/assets/profile.picture.jpg",
     social: {
       twitter: `@penguindevs`,
     },
