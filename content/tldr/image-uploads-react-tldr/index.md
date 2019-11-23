@@ -1,7 +1,7 @@
 ---
-title: "Handling images in React"
+title: "Handling image uploads in React"
 date: "2019-11-17"
-description: "Learn quickly how to handle images with React by allowing users to select images, then send those images to the backend."
+description: "Learn quickly how to handle image uploads with React by allowing users to select images via drag'n'drop, then send those images to the backend."
 type: "tldr"
 ---
 
@@ -17,22 +17,24 @@ So first, let's install **react-dropzone**: `npm install --save react-dropzone`
 
 Now to coding. We can use the `Dropzone` component as a wrapper like so inside App.js:
 
-```jsx{10}
+```jsx{9-10}
 import React from 'react';
 import Dropzone from 'react-dropzone';
-import './App.css';
 
 function App() {  
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
         <Dropzone 
-          onDrop={acceptedFiles => onImageDrop(acceptedFiles)}
+          onDropAccepted={(acceptedFile) => onImageDrop(acceptedFile)}
+          onDropRejected={() => console.log("NOT ACCEPTED")}
           multiple={false}
           accept="image/*"
         >
           {({getRootProps, getInputProps}) => (
-            <section>
+            <section 
+              style={dropzoneStyle}
+            >
               <div {...getRootProps()} >
                   <input {...getInputProps()} />
                   <p>Drop an image or click to upload</p>
@@ -49,15 +51,20 @@ function App() {
 
 - Set `multiple` to true inside the `Dropzone` wrapper if you want users to be able to select multiple images.
 - Currently, only images are accepted. If you want any file to be accepted, remove the `accept` property from `Dropzone`.
-- As highlighted, `onDrop` is called when an image is given by the user, then we call `onImageDrop()` which we define below.
+- `dropzoneStyle` is a css variable, which can be found in the [source](https://github.com/CallumHemsley/tldr-examples/tree/master/handling-images).
+- As highlighted, `onDropAccepted` and `onDropRejected` are called when a valid image is uploaded, or an invalid file is uploaded respectively. If it's a valid image file, `onImageDrop()` is called which we will define below.
+
+As you can see below, it is logged in the console when the file is invalid:
+![The rejected result](/notAccepted.png "The rejected result")
 
 ### Getting the Image file
 
 Next, let's start coding the `onImageDrop` function.
 
-```jsx{3}
+```jsx{4}
 function App() {
   function onImageDrop(acceptedFiles) {
+    console.log("ACCEPTED")
     const imageFile = acceptedFiles[0]; //We only accept one file.
     console.log(imageFile);
 
@@ -65,7 +72,7 @@ function App() {
   }
 ```
 
-All we have to do here is get the **first** file within acceptedFiles, since we're only accepting one file at a time. 
+All we have to do here is get the **first** file within `acceptedFiles`, since we're only accepting one file at a time. 
 
 *(pro tip - Check out the console log to see what the File Object looks like.)*
 
@@ -131,7 +138,10 @@ However, if for example, an internal server error occurs (HTTP code 500), then w
 
 *(In production it's better to `Throw` the error, to ensure you can find where the error originated.)*
 
-Well that about wraps this post up.
+Well that about wraps this post up, let's take a look at the result.
+
+![The end result](/dragndropAccepted.png "The end result")
+
 
 The full source code of this tl;dr can be found [here](https://github.com/CallumHemsley/tldr-examples/tree/master/handling-images).
 
