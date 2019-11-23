@@ -111,6 +111,7 @@ module.exports = {
         siteUrl: `https://penguindevs.xyz`,
       },
     },
+    `gatsby-remark-social-cards`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sitemap`,
   ],

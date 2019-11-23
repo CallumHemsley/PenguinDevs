@@ -62,7 +62,11 @@ function SEO({ description, lang, meta, title, image, slug }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:image`,
+          content: `${site.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
         },
         {
           name: `twitter:creator`,
@@ -81,10 +85,6 @@ function SEO({ description, lang, meta, title, image, slug }) {
         [
           {
             property: 'og:image',
-            content: metaImage,
-          },
-          {
-            name: 'twitter:image',
             content: metaImage,
           },
         ]
