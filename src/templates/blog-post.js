@@ -4,6 +4,7 @@ import { Disqus } from 'gatsby-plugin-disqus'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Signup from "../components/Signup";
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
@@ -11,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next, slug } = this.props.pageContext
-
+    
     let disqusConfig = {
       url: "https://penguindevs.xyz" + this.props.location.pathname,
       identifier: post.id,
@@ -48,6 +49,7 @@ class BlogPostTemplate extends React.Component {
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Signup />
           <hr
             style={{
               marginBottom: rhythm(1),

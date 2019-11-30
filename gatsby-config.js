@@ -39,6 +39,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://xyz.us4.list-manage.com/subscribe/post?u=a802a3c7657122087f9c15d6b&amp;id=dfeed8f8e2', // add your MC list endpoint here; see instructions below
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
