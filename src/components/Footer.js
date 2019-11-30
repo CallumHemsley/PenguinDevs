@@ -17,6 +17,10 @@ class Footer extends React.Component {
         <div style={{ float: 'right' }}>
           <a style={{color: "#00c918"}} href="/contact" >
             contact
+          </a>{' '}
+        &bull;{' '}
+          <a href="/rss.xml">
+            rss
           </a>
         </div>
         <a
