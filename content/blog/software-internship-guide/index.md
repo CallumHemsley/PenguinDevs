@@ -1,5 +1,5 @@
 ---
-title: "A complete guide to getting a Software Internship remotely."
+title: "A complete guide to getting a Software Internship."
 date: "2019-12-08"
 description: "Here is my guide to applying and getting a software internship remotely. I was in China studying abroad when I applied for internships. In this post I document my experiences of the process, as well as showing and giving you tips on you how you can get an internship too. This post splits the process into several stages, so find the stage you are at as a starting point."
 type: "blog"
