@@ -19,11 +19,11 @@ While you are at a disadvantage by applying and interviewing completely remotely
 
 This post will be split into 6 stages, from preparing your CV all the way to online interviews. Start from the stage you're currently at.
 
-> Note - This post assumes you already have created projects, and know the basics either from self study or from university. Here is a great [link](https://www.freecodecamp.org/news/how-i-got-my-software-engineering-internship-after-4-months-of-self-study-5b5c4836bd6f/) for helping guide you if you haven't already done that.
+> Note - This post assumes you already have created projects, and have learnt the basics either from self study or from university. Here is a great [link](https://www.freecodecamp.org/news/how-i-got-my-software-engineering-internship-after-4-months-of-self-study-5b5c4836bd6f/) for helping guide you if you haven't already done that.
 
-## Stage 0: Learn the fundamentals
+## Stage 0: Revise the fundamentals
 
-This might seem a little early, but I assure you it's not. You want to be consistently learning the fundamentals as early as possible. Cramming has never personally worked for me, and you will have more confidence going forward if you start at this stage rather than after you start applying.
+This might seem a little early, but I assure you it's not. You want to be consistently revising and using the fundamentals as early as possible. Cramming has never personally worked for me, and you will have more confidence going forward if you start at this stage rather than after you start applying.
 
 Here is my (non-exhaustive) list of *fundamentals*, things you must absolutely know.
 
