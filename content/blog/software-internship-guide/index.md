@@ -57,6 +57,8 @@ For me this was the best resource I found for preparing. It really is a **godsen
 
 Here is a great [link](https://medium.com/@alimirio/how-to-solve-problems-on-leetcode-to-prepare-for-technical-interviews-e74781b865d2) for making the most out of practicing problems on [Leetcode](https://www.leetcode.com), [Hackerrank](https://www.hackerrank.com/), etc.
 
+> edit - I've received some replies saying that linux and git are also worth learning for interviews. Personally, I was never asked about these two things, and at my current internship, I use neither (Windows + P4 instead).
+
 ## Stage 1: Preparing and sending the CV
 
 ### Preparing your CV
@@ -104,6 +106,8 @@ Try to keep the experience section completely related to software development. F
 It's not usually worth putting any unrelated experience e.g bartender, unless you have nothing related to software development to put on your CV.
 
 They aren't going to expect you to have heaps of experience. But anything that shows passion toward the field is a great plus.
+
+Make sure to state any collaborative projects you have worked on. For example I know an intern who worked on a video game with friends just for fun/learning. Every interview he attended, they asked for a presentation of the game! His current project lead said that a project like that showed almost everything in terms of pre-requisites (team work, version control, code reviews etc).
 
 When describing what you did, try to show how you **provided value**, for example:
 
