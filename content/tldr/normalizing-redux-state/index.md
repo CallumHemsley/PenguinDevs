@@ -134,7 +134,7 @@ With this normalized state, you can find users by id in *O(1)*, as well as still
 
 Furthermore, comments and users are separated, with no deep nesting. They are linked via an array of comment ids per user, as highlighted (a foreign key if you will).
 
-Instead of updating a comment in multiple places now, we can simply update it within the comments section of the state. This means that the users slice of state doesn't mutate. Therefore only the UI components directly related to the comments slice of the state will update.
+Instead of updating a comment in multiple places now, we can simply update it within the comments section of the state. This means that the users slice of state doesn't mutate. Therefore only the UI directly related to the comments state will update.
 
 We also don't need to dig through the user state to find comments, we can directly go to the comments state now.
 
