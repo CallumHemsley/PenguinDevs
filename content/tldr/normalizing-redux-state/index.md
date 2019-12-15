@@ -1,13 +1,13 @@
 ---
-title: "Normalizing your redux store"
+title: "Normalizing your redux state shape"
 date: "2019-12-13"
-description: "Learn how to normalize your redux state, and why you should do that in the first place, with examples."
+description: "Learn how to normalize your redux state shape, and why you should do that in the first place, with examples."
 type: "tldr"
 ---
 
 ![Redux dev tools](/redux-dev-tools.png "Redux dev tools")
 
-## Why normalize the redux state
+## Why normalize the redux state shape
 
 I think this is best explained with an example.
 
@@ -80,13 +80,13 @@ As the [redux docs](https://redux.js.org/recipes/structuring-reducers/normalizin
 
 ## The solution
 
-More often than not, we structure the stores of our redux application in the same way that we receive the data from the API. However, it doesn't have to be this way.
+More often than not, we structure the state shape of our redux application in the same way that we receive the data from the API. However, it doesn't have to be this way.
 
-Therefore redux suggests we learn from our past mistakes (Databases), and store the data in a **normalized** form.
+Redux suggests we learn from our past mistakes (Databases), and store the data in a **normalized** form.
 
 Normalization refers to transforming the schema of a database to remove duplicate data. The biggest advantage of this is having a *single point of truth*, meaning there is only one place in the database that contains the true value of some piece of information.
 
-#### Normalizing the redux store
+#### Normalizing the redux state shape
 
 Instead of storing data as an array of objects, we store the data as an object, **indexed by a unique id**.
 
@@ -130,7 +130,7 @@ state = {
 }
 ```
 
-With this normalized state, you can find users by id in *O(1)*, as well as still getting all the advantages of an array based state.
+With this normalized state shape, you can find users by id in *O(1)*, as well as still getting all the advantages of an array based state.
 
 Furthermore, comments and users are separated, with no deep nesting. They are linked via an array of comment ids per user, as highlighted (a foreign key if you will).
 
