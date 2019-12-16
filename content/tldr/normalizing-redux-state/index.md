@@ -30,13 +30,13 @@ state = {
 
 This is also most likely what the data you are fetching from your API looks like.
 
-Whilst this would work in most cases, let's imagine you want to edit a specific user.
+Whilst this would work in most cases, let's imagine you want to find a specific user.
 
-Firstly, you would loop through the array of users until you find the correct ID. This wouldn't be a problem with a small list of users, but as your web application scales, you could run into performance issues.
+You would loop through the array of users until you find the correct ID. This wouldn't be a problem with a small list of users, but as your web application scales, you could run into performance issues.
 
 Futhermore, what about if you have nested data?
 
-For example each user could have a comments list, with each comment object containing an id and a message.
+For example each user could have a list of blogs that they follow, with each blog object containing an id and a name.
 
 This would result in the previous example looking like:
 
@@ -47,14 +47,14 @@ state = {
       userId: 1,
       name: "Callum",
       email: "someEmail@gmail.com"
-      comments: [
+      blogs: [
         {
           id: 12,
-          message: "a comment",
+          name: "Penguin Blog",
         },
         {
           id: 15,
-          message: "another comment",
+          name: "Cat Blog",
         },
         ...
       ]
@@ -66,7 +66,7 @@ state = {
 }
 ```
 
-As you can see, things are starting to get complicated. What if two users, *for some odd reason* had the same comment?
+As you can see, things are starting to get complicated. What if two users follow the same blog?
 
 Data could easily get repeated here.
 
@@ -74,7 +74,7 @@ As the [redux docs](https://redux.js.org/recipes/structuring-reducers/normalizin
 
 - We might have to update the same piece of data in several locations.
 - Trying to update a deeply nested data structure can be a horrible experience.
-  - Imagine first looping through to find the correct user, then looping through to find the right comment, etc..
+  - Imagine first looping through to find the correct user, then looping through to find the right blog etc..
 - The redux store is immutable, meaning that every time we make a change to this nested data structure, all ancestors in the state would also have to be updated.
   - This would make UI components re-render unnecessarily.
 
@@ -106,21 +106,21 @@ state = {
         userId: 1,
         name: "Callum",
         email: "someEmail@gmail.com"
-        comments: [12, 15] //Arr of comments associated to this user
+        blogs: [12, 15] //Arr of blogs associated to this user
       },
       ...
     },
     allIds: [1], //Arr of unique IDs to indicate order.
   },
-  comments: {
+  blogs: {
     byId: {
       12: {
         id: 12,
-        comment: "a comment",
+        name: "Penguin Blog",
       },
       15: {
         id: 15,
-        comment: "another comment",
+        name: "Cat Blog",
       }
     },
     allIds: [12, 15]
@@ -132,11 +132,11 @@ state = {
 
 With this normalized state shape, you can find users by id in *O(1)*, as well as still getting all the advantages of an array based state.
 
-Furthermore, comments and users are separated, with no deep nesting. They are linked via an array of comment ids per user, as highlighted (a foreign key if you will).
+Furthermore, blogs and users are separated, with no deep nesting. They are linked via an array of blog ids per user, as highlighted (a foreign key if you will).
 
-Instead of updating a comment in multiple places now, we can simply update it within the comments section of the state. This means that the users slice of state doesn't mutate. Therefore only the UI directly related to the comments state will update.
+Instead of updating a blog in multiple places now, we can simply update it within the blogs section of the state. This means that the users slice of state doesn't mutate. Therefore only the UI directly related to the blogs state will update.
 
-We also don't need to dig through the user state to find comments, we can directly go to the comments state now.
+We also don't need to dig through the user state to find blogs, we can directly go to the blogs state now.
 
 To render the rows, you don't need to do `Object.values()` or anything like that.
 
