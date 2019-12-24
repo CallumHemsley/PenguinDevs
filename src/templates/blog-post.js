@@ -31,22 +31,22 @@ class BlogPostTemplate extends React.Component {
           <header>
             <h1
               style={{
-                fontFamily: "Libre Baskerville",
+                //fontFamily: "Libre Baskerville",
                 marginTop: rhythm(1),
                 marginBottom: 0,
               }}
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            <time
               style={{
-                ...scale(-1 / 5),
+                //...scale(-1 / 5),
                 display: `block`,
                 marginBottom: rhythm(1),
               }}
             >
               {post.frontmatter.date}
-            </p>
+            </time>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <Signup />
