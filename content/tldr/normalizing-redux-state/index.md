@@ -159,7 +159,7 @@ Another issue I've read about is that it can create a hard to debug layer betwee
 
 Also at some point, we're going to have to *de-normalize* the data to show it, so how do we go about doing that correctly?
 
-The answer is selectors, which I will be explaining and showing in my next tl;dr post.
+The answer is selectors, which I will be explaining and showing in [my next tl;dr post](https://penguindevs.xyz/denormalizing-redux-state/).
 
 ## Conclusion
 
