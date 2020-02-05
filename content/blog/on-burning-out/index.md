@@ -31,7 +31,7 @@ So therefore I started tracking my time to see where I was losing it, and as it 
 - From this point, there are usually 3 main things I would want to get done before going to sleep/relaxing.
   - Chinese practice/learning (flashcards/watching videos/learning new vocabulary) (1 hour *minimum*)
   - The #100daysofcode challenge (1 hour of coding *minimum*)
-  - I cycle to work, and it meditation/journal reflection
+  - meditation/journal reflection
 
 In total this would take 2 and half hours minimum. So in the ideal case, I would be done for the day by 9pm, and could have an hour to relax, before reading/going to bed around 10pm.
 
