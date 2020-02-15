@@ -7,7 +7,7 @@ type: "tldr"
 
 ![redux-observable](redux-observable_pic.png)
 
-So you've started using [redux-observable](https://redux-observable.js.org/) because it's a powerful. But how can we do the equivalent of `promise.all()` using redux-observable and rxjs ?
+So you've started using [redux-observable](https://redux-observable.js.org/) because it's powerful. But how can you do the equivalent of `promise.all()` using redux-observable and rxjs ?
 
 > note - this post assumes a basic knowledge of redux, redux-observable and rxjs.
 
@@ -20,8 +20,8 @@ I think this is quite a common use case but was surprised to not find anything i
 First, let's define a function to fetch one of the pieces of data we need:
 
 ```jsx
-const fetchTodo = () => (action) =>
-  ajax.getJSON("https://jsonplaceholder.typicode.com/todos/" + action.id).pipe(
+const fetchTodo = () => (action$) =>
+  ajax.getJSON("https://jsonplaceholder.typicode.com/todos/" + action$.id).pipe(
     map(response =>
       fetchTodoSuccess(response)
     ),
